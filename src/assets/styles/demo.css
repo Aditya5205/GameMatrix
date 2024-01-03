@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: ethno;
+}
+
+.logo {
+    width: 140px;
+    height: 40px;
+    text-align: center;
+}
+
+.logo a{
+    font-family: pdark;
+    color: #C10206;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.logo a:hover{
+    color: #FFFBF2;
+}
+
+.nav-list {
+    height: 60px;
+    background-color: #010A10;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.space {
+    width: 40%;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    padding: 15px 10px;
+    color: #C10206;
+    cursor: pointer;
+    border-radius: .40rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.nav-list li a:hover{
+    color: #FFFBF2;
+}
+
+.login-signup {
+    display: flex;
+}
+
+.but {
+    padding: 8px 25px;
+    background-color: #DFE2DB;
+    color: #010A10;
+    cursor: pointer;
+    align-items: center;
+    border-radius: .40rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+
+}
+
+.but:hover {
+    background-color: #C10206;
+    border-color: #C10206;
+    color: #FFFBF2;
+}
+
+.recom-div {
+    margin: 100px auto;
+    height: 150px; 
+    text-align: center;
+
+}
+
+.game-name-searchbar {
+    width: 400px;
+    height: 30px;
+    font-size: large;
+    border-radius: .40rem;
+    background-color: #DFE2DB;
+    border-color: #DFE2DB;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.game-name-searchbar:focus {
+    background-color:#FFFBF2;
+}
+
+body {
+    background-color: #211D21;
+}
+
+@font-face { font-family: pdark; src: url('/src/assets/pdark.ttf'); } 
+@font-face { font-family: ethno; src: url('/src/assets/ethnocentric\ rg.otf'); } 
+
+.seachbar-heading {
+    color:#C10206;
+    margin-bottom: 30px;
+    font-family: ethno;
+    font-size: 30px;
+}
+
+h1 {
+    color:#DFE2DB;
+}
+
+.trending-heading {
+    color:#C10206;   
+}
+
+.tbl-headings {
+    color: #C10206;
+}
+
+.tbl-data {
+    color:#DFE2DB;
+    height: 80px;
+}
+
+.tbl-headings,.tbl-data {
+    border-bottom: 1px solid #C10206;
+}
+
+th{
+    height: 40px;
+    font-size: large;
+}
+
+tr:hover :not(th) {
+    background-color: #A50113;
+    color:#FFFBF2;
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout:fixed;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.result-title {
+    color:#DFE2DB;
+    width: 100%;
+}
+
+h1 span{
+    color: #C10206;
+}
+
+.err-heading {
+    color:#C10206;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.err-body {
+    color: #DFE2DB;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.error {
+    text-align: center;
+    font-size: large;
+    
+}
+
+.tbl-cap {
+    color:#C10206;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.no-recom {
+    color: #DFE2DB;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+
