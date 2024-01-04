@@ -60,69 +60,59 @@
 </div>
 </template>
 
-<script>
+<script setup>
 import axios from 'axios';
 import loadingScreen from '../components/Loader.vue'
+import { onBeforeMount,ref } from 'vue';
+import { useRoute } from 'vue-router'
 
-export default {
-  data(){
-    return {
-      similar_recommendations: [],
-      also_played_recommmendations: [],
-      show_similar: true,
-      show_also_played: true,
-      isLoading: true,
-      gameName: ''
+const route = useRoute();
+let similar_recommendations = ref([]);
+let also_played_recommmendations = ref([]);
+let show_similar = ref(true);
+let show_also_played = ref(true);
+let isLoading = ref(true);
+let gameName = ref('');
+    
+const sendGameName = (gameName) => {
+  const path = 'http://127.0.0.1:5000/results';
+  axios.post(path, {'gameName': gameName})
+  .then((res) => {
+    let similar_games_data = res.data.similar_games;
+    let also_played_games_data = res.data.also_played_games;
+
+    // checking if the gameName sent gave any results or not
+    // if not results are provided, then re-route to error page
+    if(similar_games_data === 'e' && also_played_games_data === 'e') router.push('/error');
+
+    else if(similar_games_data === 'e'){
+      show_similar.value = false;
+      also_played_recommmendations.value = also_played_games_data;
+    } 
+
+    else if(also_played_games_data === 'e'){
+      show_also_played.value = false;
+      similar_recommendations.value = similar_games_data;
+    } 
+
+    else {
+      similar_recommendations.value = similar_games_data;
+      also_played_recommmendations.value = also_played_games_data;
     }
-  },
 
-  components: {
-    loadingScreen
-  },
-
-  methods: {
-    sendGameName(gameName){
-      const path = 'http://127.0.0.1:5000/results';
-      axios.post(path, {'gameName': gameName})
-      .then((res) => {
-        let similar_games_data = res.data.similar_games;
-        let also_played_games_data = res.data.also_played_games;
-
-        // checking if the gameName sent gave any results or not
-        // if not results are provided, then re-route to error page
-        if(similar_games_data === 'e' && also_played_games_data === 'e') this.$router.push('/error');
-
-        else if(similar_games_data === 'e'){
-          this.show_similar = false;
-          this.also_played_recommmendations = also_played_games_data;
-        } 
-
-        else if(also_played_games_data === 'e'){
-          this.show_also_played = false;
-          this.similar_recommendations = similar_games_data;
-        } 
-
-        else {
-          this.similar_recommendations = similar_games_data;
-          this.also_played_recommmendations = also_played_games_data;
-        }
-
-        this.isLoading = false;
-      
-      })
-    },
-
-    setGameName(gameName){
-      this.gameName = this.$route.query.game;
-    }
-  },
-
-  mounted() {
-    this.setGameName(this.gameName);
-    this.sendGameName(this.gameName);
-  }
-
-
+    isLoading.value = false;
+  
+  })
 }
+
+const setGameName = (gameName) => {
+  gameName.value = route.query.game;
+}
+ 
+onBeforeMount(() => {
+  setGameName(gameName);
+  sendGameName(gameName.value);
+})
+
 </script>
 

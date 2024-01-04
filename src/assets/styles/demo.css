@@ -121,6 +121,7 @@ h1 {
 
 .tbl-headings {
     color: #C10206;
+    text-align: left;
 }
 
 .tbl-data {
@@ -182,6 +183,10 @@ h1 span{
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
+}
+
+td,th {
+    padding: 0 7px;
 }
 
 .no-recom {

@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <header>
     <nav class="navbar">
@@ -24,10 +20,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<script>
+<script setup>
 import './assets/styles/demo.css'
 
-export default {
 
-}
 </script>

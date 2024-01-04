@@ -102,9 +102,9 @@ async setup() {
   let similar_recommendations = ref([]);
   let also_played_recommmendations = ref([]);
   let show_similar = ref(true);
-  let show_also_played = ref([]);
-  let isLoading = ref([]);
-  let gameName = ref([]);
+  let show_also_played = ref(true);
+  let isLoading = ref(true);
+  let gameName = ref('');
     
   async function sendGameName(gameName) {
     const path = "http://127.0.0.1:5000/results";
