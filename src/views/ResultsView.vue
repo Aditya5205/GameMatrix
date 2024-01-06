@@ -23,7 +23,7 @@
       <tbody>
         <tr v-for="(gameData, index) in similar_recommendations" :key="index">
           <td class="tbl-data"> {{ gameData.Name}} </td>
-          <td class="tbl-data"> ${{ gameData.Price}} </td>
+          <td class="tbl-data"> {{ gameData.Price}} </td>
           <td class="tbl-data"> {{ gameData.Description}} </td>
         </tr>
       </tbody>
@@ -64,15 +64,16 @@
 import axios from 'axios';
 import loadingScreen from '../components/Loader.vue'
 import { onBeforeMount,ref } from 'vue';
-import { useRoute } from 'vue-router'
+import { useRoute,useRouter } from 'vue-router'
 
 const route = useRoute();
-let similar_recommendations = ref([]);
-let also_played_recommmendations = ref([]);
-let show_similar = ref(true);
-let show_also_played = ref(true);
-let isLoading = ref(true);
-let gameName = ref('');
+const router = useRouter();
+const similar_recommendations = ref([]);
+const also_played_recommmendations = ref([]);
+const show_similar = ref(true);
+const show_also_played = ref(true);
+const isLoading = ref(true);
+const gameName = ref('');
     
 const sendGameName = (gameName) => {
   const path = 'http://127.0.0.1:5000/results';

@@ -16,18 +16,18 @@ export default {
 }
 
 .loader {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: inline-block;
     position: absolute;
-    top: 40%;
+    top: 45%;
   }
   .loader::after,
   .loader::before {
     content: '';  
     box-sizing: border-box;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border: 3px solid #FFFBF2;
     position: absolute;
     left: 0;

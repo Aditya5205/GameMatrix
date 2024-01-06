@@ -1,0 +1,49 @@
+.trending-heading {
+    color:#C10206;  
+    margin-bottom: 30px;
+    font-size: 26px; 
+}
+
+.all-card-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: block;
+    width: 460px;
+}
+
+.card-text{
+    display: block;
+    color: #DFE2DB;
+}
+
+.card-content{
+    display: flex;
+}
+
+.steam-link{
+    margin-left: auto;
+}
+
+img {
+    border-radius: .80rem; 
+}
+
+.steam-img{
+    width: 36px;
+    background-color:#DFE2DB;
+    border-radius: 10rem;
+}
+
+.card-name {
+    cursor: pointer;
+    color:#C10206;
+}
+
+.card-name:hover{
+    color: #DFE2DB;
+}
