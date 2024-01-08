@@ -20,7 +20,15 @@
 </template>
 
 <script setup>
-import './assets/styles/demo.css'
 
 
 </script>
+
+<style>
+@font-face { font-family: ethno; src: url('/src/assets/ethnocentric\ rg.otf'); } 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: ethno;
+}
+</style>

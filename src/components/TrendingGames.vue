@@ -14,9 +14,10 @@
                         </div>
                         <p>{{ game_data.Price }}</p>
                     </div>
-                    <div class="steam-link"><a :href='`${game_data.Steam}`'>
+                    <a :href='`${game_data.Steam}`' class="steam-link" 
+                    target="_blank" rel="noopener noreferrer">
                         <img class='steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
-                    </a></div>
+                    </a>
                 </div>
             </div>
             
@@ -33,10 +34,10 @@ import { onBeforeMount,ref } from 'vue';
 
 const trending_games_data = ref([]);
 
-const receivePayload = () => {
-    const path = 'http://127.0.0.1:5000/trd';
+const receivePayload = async () => {
+    const path = 'http://127.0.0.1:5000/trend';
 
-    axios.get(path)
+    return axios.get(path)
     .then((res) => {
         trending_games_data.value = res.data.payload;
     })

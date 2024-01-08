@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: ethno;
-}
 
 .logo {
     width: 140px;
@@ -63,8 +58,7 @@
     align-items: center;
     border-radius: .40rem;
     margin-left: 10px;
-    margin-right: 10px;
-    font-size: 12px;
+    font-size: 13px;
 
 }
 
@@ -78,7 +72,7 @@
     margin: 100px auto;
     height: 150px; 
     text-align: center;
-
+    
 }
 
 .game-name-searchbar {
@@ -87,7 +81,6 @@
     font-size: large;
     border-radius: .40rem;
     background-color: #DFE2DB;
-    border-color: #DFE2DB;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -100,58 +93,12 @@ body {
 }
 
 @font-face { font-family: pdark; src: url('/src/assets/pdark.ttf'); } 
-@font-face { font-family: ethno; src: url('/src/assets/ethnocentric\ rg.otf'); } 
 
 .seachbar-heading {
     color:#C10206;
     margin-bottom: 30px;
     font-family: ethno;
     font-size: 30px;
-}
-
-h1 {
-    color:#DFE2DB;
-}
-
-.tbl-headings {
-    color: #C10206;
-    text-align: left;
-}
-
-.tbl-data {
-    color:#DFE2DB;
-    height: 80px;
-}
-
-.tbl-headings,.tbl-data {
-    border-bottom: 1px solid #C10206;
-}
-
-th{
-    height: 40px;
-    font-size: large;
-}
-
-tr:hover :not(th) {
-    background-color: #A50113;
-    color:#FFFBF2;
-}
-
-.tbl {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout:fixed;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.result-title {
-    color:#DFE2DB;
-    width: 100%;
-}
-
-h1 span{
-    color: #C10206;
 }
 
 .err-heading {
@@ -172,24 +119,18 @@ h1 span{
     
 }
 
-
-.tbl-cap {
-    color:#C10206;
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 20px;
+.searchbarErr {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    color:#DFE2DB;
+    background-color:#C10206;
+    margin-left: 489px;
+    margin-right: auto;
+    border-radius: 0.4rem;
 }
 
-td,th {
-    padding: 0 7px;
-}
-
-.no-recom {
-    color: #DFE2DB;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 20px;
-}
 
 

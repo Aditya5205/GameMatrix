@@ -1,61 +1,70 @@
 <template>
-<div v-if="isLoading">
-  <loadingScreen />
-</div>
+
+<loadingScreen v-if="isLoading"/>
+
 <div v-else>
   <h1 class="result-title">Recommendations for <span>{{gameName}}</span></h1>
 
-  <div v-if="show_similar" class="content tbl">
-    <table class="tbl">
-      <caption class="tbl-cap">Similar Games</caption>
-      <colgroup>
-        <col span="1" style="width: 18%;">
-        <col span="1" style="width: 7%;">
-        <col span="1" style="width: 75%;">
-      </colgroup>
-      <thead>
-        <tr>
-          <th class="tbl-headings">Name</th>
-          <th class="tbl-headings">Price</th>
-          <th class="tbl-headings">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(gameData, index) in similar_recommendations" :key="index">
-          <td class="tbl-data"> {{ gameData.Name}} </td>
-          <td class="tbl-data"> {{ gameData.Price}} </td>
-          <td class="tbl-data"> {{ gameData.Description}} </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="horizontal-card">
+    <img class="horizontal-img" :src="`${chosen_game_data[0].Image}`" alt="image"/>
+    <div class="horizontal-text">
+      <div class="horizontal-name-price-img">
+        <div>
+          <span>{{ gameName }}</span>
+          <p><span>Price: </span>{{ chosen_game_data[0].Price }}</p>
+        </div>
+        <a :href='`${chosen_game_data[0].Steam}`' target="_blank" rel="noopener noreferrer">
+          <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
+        </a>
+      </div>
+      <p><span>Description: </span><br>{{ chosen_game_data[0].Description }}</p>
+    </div>
   </div>
+
+  <div v-if="show_similar">
+    <div class="cap">Similar Games</div>
+    <div class="horizontal-card content-based" 
+  v-for="(gameData, index) in similar_recommendations" :key="index">
+
+      <img class="horizontal-img" :src="`${gameData.Image}`" alt="image"/>
+      <div class="horizontal-text">
+        <div class="horizontal-name-price-img">
+          <div>
+            <span>{{ gameData.Name }}</span>
+            <p><span>Price: </span>{{ gameData.Price }}</p>
+          </div>
+          <a :href='`${gameData.Steam}`' target="_blank" rel="noopener noreferrer">
+            <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
+          </a>
+        </div>
+        <p><span>Description: </span><br>{{ gameData.Description }}</p>
+      </div>
+    </div>
+  </div>
+  
   <div v-else class="no-recom"><h3>No similar games to show</h3></div>
 
-  <div v-if="show_also_played" class="collab tbl">
-    <table class="tbl">
-      <caption class="tbl-cap">Other users also played</caption>
-      <colgroup>
-        <col span="1" style="width: 18%;">
-        <col span="1" style="width: 7%;">
-        <col span="1" style="width: 75%;">
-      </colgroup>
-      <thead>
-        <tr>
-          <th class="tbl-headings">Name</th>
-          <th class="tbl-headings">Price</th>
-          <th class="tbl-headings">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(gameData, index) in also_played_recommmendations" :key="index">
-          <td class="tbl-data"> {{ gameData.Name}} </td>
-          <td class="tbl-data"> ${{ gameData.Price}} </td>
-          <td class="tbl-data"> {{ gameData.Description}} </td>
-        </tr>
-      </tbody>
-      
-    </table>
+  <div v-if="show_also_played">
+    <div class="cap">Other users also played</div>
+    <div class="horizontal-card collaborative" 
+    v-for="(gameData, index) in also_played_recommmendations" :key="index">
+      <img class="horizontal-img" :src="`${gameData.Image}`" alt="image"/>
+      <div class="horizontal-text">
+        <div class="horizontal-name-price-img">
+          <div>
+            <span>{{ gameData.Name }}</span>
+            <p><span>Price: </span>${{ gameData.Price }}</p>
+          </div>
+          <a :href='`${gameData.Steam}`' target="_blank" rel="noopener noreferrer">
+            <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
+          </a>
+        </div>
+        <p><span>Description: </span><br>{{ gameData.Description }}</p>
+      </div>
+    </div>
+
   </div>
+  
   <div v-else class="no-recom"><h3>No similar games played by other users</h3></div>
 </div>
 </template>
@@ -65,14 +74,19 @@ import axios from 'axios';
 import loadingScreen from '../components/Loader.vue'
 import { onBeforeMount,ref } from 'vue';
 import { useRoute,useRouter } from 'vue-router'
+import '../assets/styles/results.css'
 
 const route = useRoute();
 const router = useRouter();
+
 const similar_recommendations = ref([]);
 const also_played_recommmendations = ref([]);
+const chosen_game_data = ref([]);
+
 const show_similar = ref(true);
 const show_also_played = ref(true);
 const isLoading = ref(true);
+
 const gameName = ref('');
     
 const sendGameName = (gameName) => {
@@ -81,6 +95,7 @@ const sendGameName = (gameName) => {
   .then((res) => {
     let similar_games_data = res.data.similar_games;
     let also_played_games_data = res.data.also_played_games;
+    chosen_game_data.value = res.data.chosen_one;
 
     // checking if the gameName sent gave any results or not
     // if not results are provided, then re-route to error page
