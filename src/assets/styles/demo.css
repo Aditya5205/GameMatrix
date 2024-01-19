@@ -92,7 +92,7 @@ body {
     background-color: #211D21;
 }
 
-@font-face { font-family: pdark; src: url('/src/assets/pdark.ttf'); } 
+@font-face { font-family: pdark; src: url('/src/assets/fonts/pdark.ttf'); } 
 
 .seachbar-heading {
     color:#C10206;
@@ -114,9 +114,10 @@ body {
 }
 
 .error {
+    display: block;
     text-align: center;
     font-size: large;
-    
+    margin-top: 100px;
 }
 
 .searchbarErr {

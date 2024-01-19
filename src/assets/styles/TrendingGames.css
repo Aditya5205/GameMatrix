@@ -39,6 +39,10 @@ img {
     border-radius: 10rem;
 }
 
+.steam-img:hover {
+    opacity: 0.7;
+}
+
 .card-name {
     cursor: pointer;
     color:#C10206;

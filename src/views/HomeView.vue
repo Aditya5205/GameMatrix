@@ -2,13 +2,14 @@
   
   <div class="recom-div">
     <h2 class="seachbar-heading"> Generate Game Recommendations </h2>
-        <input @keypress.enter="onGenerate"  type="text"
-        class="game-name-searchbar" v-model="gameName" placeholder="Enter Game Name Here">
-        <button @click="onGenerate"  class="but"> Generate </button>
-        
-        <Transition name="bounce">
-          <div class="searchbarErr" v-if="showSearchbarError">Enter a valid game name</div>
-        </Transition>
+    <input @keypress.enter="onGenerate"  type="text"
+    class="game-name-searchbar" v-model="gameName" placeholder="Enter Game Name Here" required
+    >
+    <button @click="onGenerate"  class="but"> Generate </button>
+    
+    <Transition name="bounce">
+      <div class="searchbarErr" v-if="showSearchbarError">Enter a valid game name</div>
+    </Transition>
   </div> 
 
   <trending @trend_game="(game_name) => {

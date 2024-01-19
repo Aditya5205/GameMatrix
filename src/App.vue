@@ -14,7 +14,7 @@
         </div>
       </ul>
     </nav>
-    </header>
+  </header>
 
   <RouterView />
 </template>
@@ -25,7 +25,7 @@
 </script>
 
 <style>
-@font-face { font-family: ethno; src: url('/src/assets/ethnocentric\ rg.otf'); } 
+@font-face { font-family: ethno; src: url('/src/assets/fonts/ethnocentric\ rg.otf'); } 
 * {
     margin: 0;
     padding: 0;

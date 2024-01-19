@@ -8,7 +8,7 @@
         <h4>Either you entered the wrong game name <br>or the game you have entered is not in our database.</h4><br>
         <h4>Try entering an appropriate game name for recommendations</h4>
         </div>
-        <button @click="toHomeView()" class="err but">Go To Home Page</button>
+        <button @click="toHomeView()" class="err but">&lt; Return To Home Page</button>
     </div>
 
 </template>

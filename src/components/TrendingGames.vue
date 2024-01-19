@@ -6,7 +6,7 @@
         <div class="all-card-container">
 
             <div v-for="(game_data, index) in trending_games_data" :key="index" class="card">
-                <img :src='`${game_data.Image}`' alt="image">
+                <img class="game-img" :src='`${game_data.Image}`' alt="image">
                 <div class="card-content">
                     <div class="card-text">
                         <div class="card-name" @click="goEmit(game_data.Name)">
