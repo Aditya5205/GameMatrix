@@ -1,137 +1,136 @@
-
 .logo {
-    width: 140px;
-    height: 40px;
-    text-align: center;
+  width: 140px;
+  height: 40px;
+  text-align: center;
 }
 
-.logo a{
-    font-family: pdark;
-    color: #C10206;
-    text-decoration: none;
-    font-size: 18px;
+.logo a {
+  font-family: pdark;
+  color: #c10206;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.logo a:hover{
-    color: #FFFBF2;
+.logo a:hover {
+  color: #fffbf2;
 }
 
 .nav-list {
-    height: 60px;
-    background-color: #010A10;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+  height: 60px;
+  background-color: #010a10;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
 .nav-list li {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-list li a {
-    text-decoration: none;
-    padding: 15px 10px;
-    color: #C10206;
-    cursor: pointer;
-    border-radius: .40rem;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: center;
-    font-size: 14px;
+  text-decoration: none;
+  padding: 15px 10px;
+  color: #c10206;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 14px;
 }
 
-.nav-list li a:hover{
-    color: #FFFBF2;
+.nav-list li a:hover {
+  color: #fffbf2;
 }
 
 .login-signup {
-    display: flex;
-    margin-left: auto;
-    margin-right: 40px;
+  display: flex;
+  margin-left: auto;
+  margin-right: 40px;
 }
 
 .but {
-    padding: 8px 25px;
-    background-color: #DFE2DB;
-    color: #010A10;
-    cursor: pointer;
-    align-items: center;
-    border-radius: .40rem;
-    margin-left: 10px;
-    font-size: 13px;
-
+  padding: 8px 25px;
+  background-color: #dfe2db;
+  color: #010a10;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 0.4rem;
+  margin-left: 10px;
+  font-size: 13px;
 }
 
 .but:hover {
-    background-color: #C10206;
-    border-color: #C10206;
-    color: #FFFBF2;
+  background-color: #c10206;
+  border-color: #c10206;
+  color: #fffbf2;
 }
 
 .recom-div {
-    margin: 100px auto;
-    height: 150px; 
-    text-align: center;
-    
+  margin: 100px auto;
+  height: 150px;
+  text-align: center;
 }
 
 .game-name-searchbar {
-    width: 400px;
-    height: 30px;
-    font-size: large;
-    border-radius: .40rem;
-    background-color: #DFE2DB;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+  width: 400px;
+  height: 30px;
+  font-size: large;
+  border-radius: 0.4rem;
+  background-color: #dfe2db;
+  outline: none;
+  text-indent: 6px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .game-name-searchbar:focus {
-    background-color:#FFFBF2;
+  background-color: #fffbf2;
 }
 
 body {
-    background-color: #211D21;
+  background-color: #211d21;
 }
 
-@font-face { font-family: pdark; src: url('/src/assets/fonts/pdark.ttf'); } 
+@font-face {
+  font-family: pdark;
+  src: url("/src/assets/fonts/pdark.ttf");
+}
 
 .seachbar-heading {
-    color:#C10206;
-    margin-bottom: 30px;
-    font-family: ethno;
-    font-size: 30px;
+  color: #c10206;
+  margin-bottom: 30px;
+  font-family: ethno;
+  font-size: 30px;
 }
 
 .err-heading {
-    color:#C10206;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  color: #c10206;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .err-body {
-    color: #DFE2DB;
-    margin-top: 30px;
-    margin-bottom: 40px;
+  color: #dfe2db;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .error {
-    display: block;
-    text-align: center;
-    font-size: large;
-    margin-top: 100px;
+  display: block;
+  text-align: center;
+  font-size: large;
+  margin-top: 100px;
 }
 
 .searchbarErr {
-    display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    color:#DFE2DB;
-    background-color:#C10206;
-    margin-left: 489px;
-    margin-right: auto;
-    border-radius: 0.4rem;
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  color: #dfe2db;
+  background-color: #c10206;
+  margin-left: 489px;
+  margin-right: auto;
+  border-radius: 0.4rem;
 }
-
-
-

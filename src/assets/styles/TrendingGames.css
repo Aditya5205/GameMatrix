@@ -1,53 +1,54 @@
 .trending-heading {
-    color:#C10206;  
-    margin-bottom: 30px;
-    font-size: 26px; 
+  color: #c10206;
+  margin-bottom: 30px;
+  font-size: 26px;
+  margin-left: 20px;
 }
 
-.all-card-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    justify-content: space-evenly;
+.all-card-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  justify-content: space-evenly;
 }
 
 .card {
-    display: block;
-    width: 460px;
+  display: block;
+  width: 460px;
 }
 
-.card-text{
-    display: block;
-    color: #DFE2DB;
+.card-text {
+  display: block;
+  color: #dfe2db;
 }
 
-.card-content{
-    display: flex;
+.card-content {
+  display: flex;
 }
 
-.steam-link{
-    margin-left: auto;
+.steam-link {
+  margin-left: auto;
 }
 
 img {
-    border-radius: .80rem; 
+  border-radius: 0.8rem;
 }
 
-.steam-img{
-    width: 36px;
-    background-color:#DFE2DB;
-    border-radius: 10rem;
+.steam-img {
+  width: 36px;
+  background-color: #dfe2db;
+  border-radius: 10rem;
 }
 
 .steam-img:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .card-name {
-    cursor: pointer;
-    color:#C10206;
+  cursor: pointer;
+  color: #c10206;
 }
 
-.card-name:hover{
-    color: #DFE2DB;
+.card-name:hover {
+  color: #dfe2db;
 }
