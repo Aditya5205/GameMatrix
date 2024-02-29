@@ -1,81 +1,74 @@
 <template>
+  <body class="min-h-screen bg-black-light">
+    <loadingScreen v-if="isLoading" />
 
-<loadingScreen v-if="isLoading"/>
+    <div v-else v-cloak>
+      <h1 class="w-full text-center text-3xl text-white-dark">
+        Recommendations for <span class="text-red-light">{{ gameName }}</span>
+      </h1>
 
-<div v-else v-cloak>
-  <h1 class="result-title">Recommendations for <span>{{gameName}}</span></h1>
-
-  <div class="horizontal-card" v-if="show_chosen_game">
-    <img class="horizontal-img" :src="`${chosen_game[0].Image}`" alt="image"/>
-    <div class="horizontal-text">
-      <div class="horizontal-name-price-img">
-        <div>
-          <span>{{ gameName }}</span>
-          <p><span>Price: </span>{{ chosen_game[0].Price }}</p>
-        </div>
-        <a class='a-steam-img' :href='`${chosen_game[0].Steam}`' target="_blank" rel="noopener noreferrer">
-          <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
-        </a>
-      
+      <div class="mt-10" v-if="show_chosen_game">
+        <HorizontalCard
+          :image="chosen_game[0].Image"
+          :name="gameName"
+          :price="chosen_game[0].Price"
+          :steam="chosen_game[0].Steam"
+          :description="chosen_game[0].Description"
+        />
       </div>
-      <p><span>Description: </span><br>{{ chosen_game[0].Description }}</p>
-    </div>
-  </div>
 
-  <div v-if="show_similar">
-    <div class="cap">Similar Games</div>
-    <div class="horizontal-card content-based" 
-  v-for="(gameData, index) in similar_recommendations" :key="index">
-
-      <img class="horizontal-img" :src="`${gameData.Image}`" alt="image"/>
-      <div class="horizontal-text">
-        <div class="horizontal-name-price-img">
-          <div>
-            <span>{{ gameData.Name }}</span>
-            <p><span>Price: </span>{{ gameData.Price }}</p>
-          </div>
-          <a class='a-steam-img' :href='`${gameData.Steam}`' target="_blank" rel="noopener noreferrer">
-            <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
-          </a>
+      <div v-if="show_similar">
+        <div class="mt-12 text-center text-2xl text-red-light">
+          Similar Games
         </div>
-        <p><span>Description: </span><br>{{ gameData.Description }}</p>
-      </div>
-    </div>
-  </div>
-  
-  <div v-else class="no-recom"><h3>No similar games to show</h3></div>
-
-  <div v-if="show_also_played">
-    <div class="cap">Other users also played</div>
-    <div class="horizontal-card collaborative" 
-    v-for="(gameData, index) in also_played_recommmendations" :key="index">
-      <img class="horizontal-img" :src="`${gameData.Image}`" alt="image"/>
-      <div class="horizontal-text">
-        <div class="horizontal-name-price-img">
-          <div>
-            <span>{{ gameData.Name }}</span>
-            <p><span>Price: </span>{{ gameData.Price }}</p>
-          </div>
-          <a class='a-steam-img' :href='`${gameData.Steam}`' target="_blank" rel="noopener noreferrer">
-            <img class='results-steam-img' src="../assets/img/8679449_steam_fill_icon.png" alt="steam">
-          </a>
+        <div v-for="(gameData, index) in similar_recommendations" :key="index">
+          <HorizontalCard
+            :image="gameData.Image"
+            :name="gameData.Name"
+            :price="gameData.Price"
+            :steam="gameData.Steam"
+            :description="gameData.Description"
+          />
         </div>
-        <p><span>Description: </span><br>{{ gameData.Description }}</p>
       </div>
-    </div>
 
-  </div>
-  
-  <div v-else class="no-recom"><h3>No similar games played by other users</h3></div>
-</div>
+      <div v-else class="mt-20 text-center text-3xl text-white-light">
+        <h3>No similar games to show</h3>
+      </div>
+
+      <div v-if="show_also_played">
+        <div class="mt-12 text-center text-2xl text-red-light">
+          Other users also played
+        </div>
+        <div
+          v-for="(gameData, index) in also_played_recommmendations"
+          :key="index"
+        >
+          <HorizontalCard
+            :image="gameData.Image"
+            :name="gameData.Name"
+            :price="gameData.Price"
+            :steam="gameData.Steam"
+            :description="gameData.Description"
+          />
+        </div>
+      </div>
+
+      <div v-else class="mt-20 text-center text-3xl text-white-light">
+        <h3>No similar games played by other users</h3>
+      </div>
+
+      <div class="h-10"></div>
+    </div>
+  </body>
 </template>
 
 <script setup>
-import axios from 'axios';
-import loadingScreen from '../components/Loader.vue'
-import { onBeforeMount,ref } from 'vue';
-import { useRoute,useRouter } from 'vue-router'
-import '../assets/styles/results.css'
+import axios from "axios";
+import loadingScreen from "../components/Loader.vue";
+import { onBeforeMount, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import HorizontalCard from "@/components/HorizontalCard.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -89,55 +82,52 @@ const show_also_played = ref(true);
 const show_chosen_game = ref(true);
 const isLoading = ref(true);
 
-const gameName = ref('');
-    
+const gameName = ref("");
+
 const sendGameName = (gameName) => {
-  const path = 'http://127.0.0.1:5000/results';
-  axios.post(path, {'gameName': gameName})
-  .then((res) => {
-    let similar_games_data = res.data.similar_games;
-    let also_played_games_data = res.data.also_played_games;
-    let chosen_game_data = res.data.chosen_one;
+  const path = "http://127.0.0.1:5000/results";
+  axios
+    .post(path, { gameName: gameName })
+    .then((res) => {
+      let similar_games_data = res.data.similar_games;
+      let also_played_games_data = res.data.also_played_games;
+      let chosen_game_data = res.data.chosen_one;
 
-    // checking if the gameName sent gave any results or not
-    // if not results are provided, then re-route to error page
-    if(chosen_game_data === 'e' && similar_games_data === 'e' && also_played_games_data === 'e'){
-      router.push('/error');
-    } 
+      // checking if the gameName sent gave any results or not
+      // if not results are provided, then re-route to error page
+      if (
+        chosen_game_data === "e" &&
+        similar_games_data === "e" &&
+        also_played_games_data === "e"
+      ) {
+        router.push("/error");
+      } else if (similar_games_data === "e") {
+        show_similar.value = false;
+        show_chosen_game.value = false;
+        also_played_recommmendations.value = also_played_games_data;
+      } else if (also_played_games_data === "e") {
+        show_also_played.value = false;
+        similar_recommendations.value = similar_games_data;
+        chosen_game.value = chosen_game_data;
+      } else {
+        similar_recommendations.value = similar_games_data;
+        also_played_recommmendations.value = also_played_games_data;
+        chosen_game.value = chosen_game_data;
+      }
 
-    else if(similar_games_data === 'e'){
-      show_similar.value = false;
-      show_chosen_game.value = false;
-      also_played_recommmendations.value = also_played_games_data;
-    } 
-
-    else if(also_played_games_data === 'e'){
-      show_also_played.value = false;
-      similar_recommendations.value = similar_games_data;
-      chosen_game.value = chosen_game_data;
-    } 
-
-    else {
-      similar_recommendations.value = similar_games_data;
-      also_played_recommmendations.value = also_played_games_data;
-      chosen_game.value = chosen_game_data;
-    }
-
-    isLoading.value = false;
-  
-  }).catch((err) => {
-    console.log(err);
-  })
-}
+      isLoading.value = false;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const setGameName = (gameName) => {
   gameName.value = route.query.game;
-}
- 
+};
+
 onBeforeMount(() => {
   setGameName(gameName);
   sendGameName(gameName.value);
-})
-
+});
 </script>
-

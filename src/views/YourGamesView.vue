@@ -1,13 +1,7 @@
 <template>
-  <h1> This is game lib</h1>
+  <body class="min-h-screen bg-black-light">
+    <div class="flex items-center justify-center text-2xl text-red-light">
+      <h1>This is game library page</h1>
+    </div>
+  </body>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
