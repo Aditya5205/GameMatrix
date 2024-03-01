@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import YourGamesView from "../views/YourGamesView.vue";
-import TopGamesView from "../views/TopGamesView.vue";
-import AboutView from "../views/AboutView.vue";
-import ResultsView from "../views/ResultsView.vue";
-import ErrorView from "../views/ErrorView.vue";
+import {
+  HomeView,
+  YourGamesView,
+  TopGamesView,
+  AboutView,
+  ResultsView,
+  ErrorView,
+} from "../views/views.js";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

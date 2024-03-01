@@ -3,7 +3,9 @@
     <loadingScreen v-if="isLoading" />
 
     <div v-else v-cloak>
-      <h1 class="w-full text-center text-3xl text-white-dark">
+      <h1
+        class="w-full text-wrap pt-2 text-center text-2xl text-white-dark sm:pt-0 sm:text-3xl"
+      >
         Recommendations for <span class="text-red-light">{{ gameName }}</span>
       </h1>
 
@@ -32,7 +34,10 @@
         </div>
       </div>
 
-      <div v-else class="mt-20 text-center text-3xl text-white-light">
+      <div
+        v-else
+        class="mt-20 text-center text-2xl text-white-light sm:text-3xl"
+      >
         <h3>No similar games to show</h3>
       </div>
 
@@ -54,7 +59,10 @@
         </div>
       </div>
 
-      <div v-else class="mt-20 text-center text-3xl text-white-light">
+      <div
+        v-else
+        class="mt-20 text-center text-2xl text-white-light sm:text-3xl"
+      >
         <h3>No similar games played by other users</h3>
       </div>
 
@@ -85,7 +93,7 @@ const isLoading = ref(true);
 const gameName = ref("");
 
 const sendGameName = (gameName) => {
-  const path = "https://game-recommendation-flask.onrender.com/results";
+  const path = "http://127.0.0.1:5000/results";
   axios
     .post(path, { gameName: gameName })
     .then((res) => {

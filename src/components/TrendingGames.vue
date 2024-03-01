@@ -1,7 +1,11 @@
 <template>
-  <div class="mx-5 mb-6 text-2xl text-red-light">Trending Games</div>
+  <div
+    class="mx-5 mb-6 text-center text-xl text-red-light sm:text-left sm:text-2xl"
+  >
+    Trending Games
+  </div>
 
-  <div class="mx-5 grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-4">
+  <div class="mx-5 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-4">
     <div v-for="(game_data, index) in trending_games_data" :key="index">
       <img
         class="rounded-xl"
@@ -9,14 +13,14 @@
         alt="steam_game_image"
       />
       <div class="mt-1 flex">
-        <div class="text-white-dark">
+        <div class="w-3/4 text-white-dark">
           <div
-            class="cursor-pointer text-xs text-red-light hover:text-white-dark sm:text-base"
+            class="cursor-pointer text-wrap text-sm text-red-light hover:text-white-dark sm:text-base"
             @click="goEmit(game_data.Name)"
           >
             {{ game_data.Name }}
           </div>
-          <div class="text-sm">{{ game_data.Price }}</div>
+          <div class="text-xs sm:text-sm">{{ game_data.Price }}</div>
         </div>
 
         <a
@@ -26,7 +30,7 @@
           rel="noopener noreferrer"
         >
           <img
-            class="w-5 rounded-full bg-white-dark hover:opacity-70 sm:w-9"
+            class="w-7 rounded-full bg-white-dark hover:opacity-70 sm:w-9"
             src="../assets/img/8679449_steam_fill_icon.png"
             alt="steam_logo"
           />
@@ -44,7 +48,7 @@ import { onBeforeMount, ref } from "vue";
 const trending_games_data = ref([]);
 
 const receivePayload = async () => {
-  const path = "https://game-recommendation-flask.onrender.com/trend";
+  const path = "http://127.0.0.1:5000/trend";
 
   return axios.get(path).then((res) => {
     trending_games_data.value = res.data.payload;

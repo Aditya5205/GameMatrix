@@ -1,21 +1,28 @@
 <template>
-  <div class="loader-parent">
+  <body class="flex justify-center">
     <span class="loader"></span>
-  </div>
+  </body>
 </template>
 
 <style scoped>
-.loader-parent {
-  text-align: center;
-}
-
 .loader {
   width: 70px;
   height: 70px;
   display: inline-block;
   position: absolute;
-  top: 45%;
+  top: 25%;
 }
+
+@media (min-width: 640px) {
+  .loader {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 45%;
+  }
+}
+
 .loader::after,
 .loader::before {
   content: "";
