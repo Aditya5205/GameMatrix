@@ -8,15 +8,15 @@
         <input
           @keypress.enter="onGenerate"
           type="text"
-          class="mr-3 w-1/2 rounded-lg p-1 text-sm outline-none sm:w-1/3 sm:text-lg"
+          class="mr-3 w-1/2 rounded-lg p-1 outline-none sm:w-1/3"
           :class="
             showSearchbarError
-              ? 'bg-red-light text-center font-cool text-[10px]  text-white-light sm:text-base '
-              : 'bg-white-dark indent-1 font-search focus:bg-white-light sm:indent-2'
+              ? 'bg-red-light text-center font-cool text-[10px] text-white-light sm:text-base'
+              : 'bg-white-dark indent-1 font-search text-sm focus:bg-white-light sm:indent-2 sm:text-lg'
           "
           v-model="gameName"
           placeholder="Enter Game Name Here"
-          :value="showSearchbarError ? 'Enter a Valid Game Name' : gameName"
+          :value="showSearchbarError ? 'Enter a Valid Game' : gameName"
           :readonly="showSearchbarError"
         />
         <button
