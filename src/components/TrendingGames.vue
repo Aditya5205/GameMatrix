@@ -48,7 +48,7 @@ import { onBeforeMount, ref } from "vue";
 const trending_games_data = ref([]);
 
 const receivePayload = async () => {
-  const path = "http://127.0.0.1:5000/trend";
+  const path = "https://game-recommendation-flask.onrender.com/trend";
 
   return axios.get(path).then((res) => {
     trending_games_data.value = res.data.payload;
