@@ -9,7 +9,7 @@
   width: 70px;
   height: 70px;
   display: inline-block;
-  position: absolute;
+  position: relative;
   top: 25%;
 }
 

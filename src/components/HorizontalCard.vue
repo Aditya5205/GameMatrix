@@ -4,6 +4,7 @@
       class="rounded-xl object-fill sm:aspect-[5/2] sm:h-[160px] sm:w-[330px]"
       :src="`${props.image}`"
       alt="game_image"
+      loading="lazy"
     />
     <div
       class="mt-2 text-wrap text-sm text-red-light sm:ml-5 sm:mt-0 sm:text-base"

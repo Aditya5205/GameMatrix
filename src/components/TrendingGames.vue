@@ -33,6 +33,7 @@
             class="w-7 rounded-full bg-white-dark hover:opacity-70 sm:w-9"
             src="../assets/img/8679449_steam_fill_icon.png"
             alt="steam_logo"
+            loading="lazy"
           />
         </a>
       </div>

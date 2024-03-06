@@ -34,22 +34,30 @@
       </div>
     </div>
 
-    <Trending
-      @trend_game="
-        (game_name) => {
-          gameName = game_name;
-          onGenerate();
-        }
-      "
-    />
+    <Suspense>
+      <Trending
+        @trend_game="
+          (game_name) => {
+            gameName = game_name;
+            onGenerate();
+          }
+        "
+      />
+      <template #fallback>
+        <loadingScreen class="pt-20" />
+      </template>
+    </Suspense>
   </body>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { defineAsyncComponent, ref } from "vue";
 import { useRouter } from "vue-router";
-import Trending from "../components/TrendingGames.vue";
-// import "../assets/styles/demo.css";
+import loadingScreen from "../components/Loader.vue";
+
+const Trending = defineAsyncComponent(
+  () => import("../components/TrendingGames.vue"),
+);
 
 const router = useRouter();
 const gameName = ref("");

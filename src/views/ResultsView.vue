@@ -1,6 +1,6 @@
 <template>
   <body class="min-h-screen bg-black-light">
-    <loadingScreen v-if="isLoading" />
+    <loadingScreen v-if="isLoading" class="pt-40 text-center" />
 
     <div v-else v-cloak>
       <h1
