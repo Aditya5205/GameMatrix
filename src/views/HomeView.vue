@@ -1,18 +1,18 @@
 <template>
   <body class="min-h-screen bg-black-light">
     <div class="flex h-60 flex-col items-center justify-center">
-      <h2 class="w-full text-center text-2xl text-red-light sm:text-3xl">
+      <h2 class="w-full text-center text-4xl text-red-light sm:text-5xl">
         Generate Game Recommendations
       </h2>
       <div class="mt-3 flex w-full justify-center sm:mt-4">
         <input
           @keypress.enter="onGenerate"
           type="text"
-          class="mr-3 w-1/2 rounded-lg p-1 outline-none sm:w-1/3"
+          class="mr-3 w-1/2 rounded-lg outline-none sm:w-1/3"
           :class="
             showSearchbarError
-              ? 'bg-red-light text-center font-cool text-[10px] text-white-light sm:text-base'
-              : 'bg-white-dark indent-1 font-search text-sm focus:bg-white-light sm:indent-2 sm:text-lg'
+              ? 'font-sairaHeader bg-red-light text-center text-xl text-white-light sm:text-2xl'
+              : 'font-sairaBody bg-white-dark indent-1 text-lg focus:bg-white-light sm:indent-2 sm:text-xl'
           "
           v-model="gameName"
           placeholder="Enter Game Name Here"
@@ -21,7 +21,7 @@
         />
         <button
           @click="onGenerate"
-          class="rounded-lg bg-white-dark p-1.5 text-[10px] text-black-light sm:px-3 sm:py-2 sm:text-sm"
+          class="rounded-lg bg-white-dark p-1.5 text-lg text-black-light sm:px-4 sm:py-2 sm:text-[22px]"
           :disabled="showSearchbarError"
           :class="
             showSearchbarError

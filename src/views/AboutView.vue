@@ -1,6 +1,6 @@
 <template>
   <body class="min-h-screen bg-black-light">
-    <div class="px-2 pt-10 text-lg text-red-light sm:text-xl">
+    <div class="font-sairaBody px-2 pt-10 text-lg text-red-light sm:text-3xl">
       <div>
         <div class="text-center">
           <span class="text-white-light">Game Matrix</span>, a game
@@ -18,14 +18,14 @@
             </span>
           </li>
           <li class="text-white-light">
-            <span class="text-red-light"
-              >Add Top games and game library pages.</span
-            >
+            <span class="text-red-light">
+              Add Top games and game library pages.
+            </span>
           </li>
           <li class="text-white-light">
-            <span class="text-red-light"
-              >Improve Backend and Recommendations.</span
-            >
+            <span class="text-red-light">
+              Improve Backend and Recommendations.
+            </span>
           </li>
         </ul>
         <div class="text-center">
@@ -36,13 +36,13 @@
     </div>
 
     <div
-      class="flex flex-col items-center justify-center pt-5 text-center text-xl text-red-light"
+      class="font-sairaBody flex flex-col items-center justify-center pt-5 text-center text-xl text-red-light"
     >
       Contact Me:
-      <span class="pb-3 font-search">adityasingh19122002@gmail.com</span>
+      <span class="pb-3">adityasingh19122002@gmail.com</span>
       <a href="https://github.com/Aditya5205">
         <img
-          class="w-10 rounded-full bg-white-light sm:w-14"
+          class="w-10 rounded-full bg-white-light hover:opacity-70 sm:w-14"
           src="../assets/img/github.png"
           alt="github_logo"
       /></a>

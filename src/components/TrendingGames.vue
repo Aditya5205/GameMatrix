@@ -1,7 +1,7 @@
 <template>
   <div v-if="isApiDone">
     <div
-      class="mx-5 mb-6 text-center text-xl text-red-light sm:text-left sm:text-2xl"
+      class="mx-5 mb-6 text-center text-3xl text-red-light sm:text-left sm:text-4xl"
     >
       Trending Games
     </div>
@@ -15,12 +15,12 @@
         <div class="mt-1 flex">
           <div class="w-3/4 text-white-dark">
             <div
-              class="cursor-pointer text-wrap text-sm text-red-light hover:text-white-dark sm:text-base"
+              class="font-sairaBody cursor-pointer text-wrap text-xl text-red-light hover:text-white-dark sm:text-[22px]"
               @click="goEmit(game_data.Name)"
             >
               {{ game_data.Name }}
             </div>
-            <div class="text-xs sm:text-sm">{{ game_data.Price }}</div>
+            <div class="sm:text-md text-lg">{{ game_data.Price }}</div>
           </div>
           <a
             :href="`${game_data.Steam}`"

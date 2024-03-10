@@ -7,11 +7,11 @@
       loading="lazy"
     />
     <div
-      class="mt-2 text-wrap text-sm text-red-light sm:ml-5 sm:mt-0 sm:text-base"
+      class="font-sairaBody mt-2 w-full text-wrap text-red-light sm:ml-5 sm:mt-0"
     >
       <div class="flex">
-        <div class="w-4/5">
-          <p class="font-semibold">{{ props.name }}</p>
+        <div class="w-4/5 text-2xl">
+          <p class="font-sairaHeader text-3xl">{{ props.name }}</p>
           Price: <span class="text-white-light">{{ props.price }}</span>
         </div>
         <a
@@ -27,8 +27,8 @@
           />
         </a>
       </div>
-      Description:<br />
-      <p class="text-pretty text-xs text-white-light sm:text-base">
+      <span class="text-2xl">Description:</span><br />
+      <p class="text-pretty text-lg text-white-light sm:text-xl">
         {{ props.description }}
       </p>
     </div>

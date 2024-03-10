@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        search: ["Georgia", '"Times New Roman"', "Times", "serif"],
-        cool: ["ethno", "system-ui", "sans-serif"],
+        sairaHeader: ["sairaHeader", "system-ui", "sans-serif"],
+        sairaBody: ["sairaBody", "system-ui", "sans-serif"],
       },
       colors: {
         red: {

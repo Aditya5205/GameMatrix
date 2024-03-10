@@ -1,9 +1,11 @@
 <template>
   <header
-    class="h-14 bg-black-dark p-2 text-red-light shadow-lg sm:h-16 sm:p-3"
+    class="h-16 bg-black-dark p-2 text-red-light shadow-lg sm:h-20 sm:p-3"
   >
     <nav>
-      <ul class="flex items-center gap-x-5 text-sm sm:text-base">
+      <ul
+        class="flex items-center justify-around gap-x-7 text-lg sm:justify-normal sm:text-[22px]"
+      >
         <!-- This is where logo goes -->
         <li class="text-center hover:text-white-light sm:mr-3">
           <RouterLink class="sm:p-1" to="/">GAME <br />MATRIX</RouterLink>

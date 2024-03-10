@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: ethno;
-  src: url("../fonts/ethnocentric rg.otf");
+  font-family: sairaHeader;
+  src: url("../fonts/Saira/Saira_ExtraCondensed-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: sairaBody;
+  src: url("../fonts/Saira/Saira_Condensed-Bold.ttf");
 }
 
 @layer base {
   html {
-    font-family: "ethno", system-ui, sans-serif;
+    font-family: "sairaHeader", system-ui, sans-serif;
   }
 }
 

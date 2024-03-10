@@ -4,7 +4,7 @@
 
     <div v-else v-cloak>
       <h1
-        class="w-full text-wrap pt-2 text-center text-2xl text-white-dark sm:pt-0 sm:text-3xl"
+        class="w-full text-wrap pt-2 text-center text-4xl text-white-dark sm:pt-0 sm:text-5xl"
       >
         Recommendations for <span class="text-red-light">{{ gameName }}</span>
       </h1>
@@ -20,7 +20,7 @@
       </div>
 
       <div v-if="show_similar">
-        <div class="mt-12 text-center text-2xl text-red-light">
+        <div class="mt-12 text-center text-5xl text-red-light">
           Similar Games
         </div>
         <div v-for="(gameData, index) in similar_recommendations" :key="index">
@@ -36,13 +36,13 @@
 
       <div
         v-else
-        class="mt-20 text-center text-2xl text-white-light sm:text-3xl"
+        class="mt-20 text-center text-4xl text-white-light sm:text-5xl"
       >
         <h3>No similar games to show</h3>
       </div>
 
       <div v-if="show_also_played">
-        <div class="mt-12 text-center text-2xl text-red-light">
+        <div class="mt-12 text-center text-5xl text-red-light">
           Other users also played
         </div>
         <div
@@ -61,7 +61,7 @@
 
       <div
         v-else
-        class="mt-20 text-center text-2xl text-white-light sm:text-3xl"
+        class="mt-20 text-center text-4xl text-white-light sm:text-5xl"
       >
         <h3>No similar games played by other users</h3>
       </div>
