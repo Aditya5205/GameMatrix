@@ -12,7 +12,10 @@
       <div class="flex">
         <div class="w-4/5 text-2xl">
           <p class="font-sairaHeader text-3xl">{{ props.name }}</p>
-          Price: <span class="text-white-light">{{ props.price }}</span>
+          Price:
+          <span class="text-xl text-white-light sm:text-2xl">{{
+            props.price
+          }}</span>
         </div>
         <a
           class="ml-auto mr-5 flex items-center rounded-full sm:mr-20"

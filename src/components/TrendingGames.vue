@@ -15,7 +15,7 @@
         <div class="mt-1 flex">
           <div class="w-3/4 text-white-dark">
             <div
-              class="font-sairaBody cursor-pointer text-wrap text-xl text-red-light hover:text-white-dark sm:text-[22px]"
+              class="cursor-pointer text-wrap font-sairaBody text-xl text-red-light hover:text-white-dark sm:text-[22px]"
               @click="goEmit(game_data.Name)"
             >
               {{ game_data.Name }}
@@ -52,7 +52,7 @@ const trending_games_data = ref([]);
 const isApiDone = ref(false);
 
 const receivePayload = async () => {
-  const path = "http://127.0.0.1:5000/trend";
+  const path = "https://game-recommendation-flask.onrender.com/trend";
 
   return axios
     .get(path)

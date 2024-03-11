@@ -93,7 +93,7 @@ const isLoading = ref(true);
 const gameName = ref("");
 
 const sendGameName = (gameName) => {
-  const path = "http://127.0.0.1:5000/results";
+  const path = "https://game-recommendation-flask.onrender.com/results";
   axios
     .post(path, { gameName: gameName })
     .then((res) => {
