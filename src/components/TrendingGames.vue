@@ -52,7 +52,7 @@ const trending_games_data = ref([]);
 const isApiDone = ref(false);
 
 const receivePayload = async () => {
-  const path = "http://127.0.0.1:5000/trend";
+  const path = "https://game-recommendation-flask.onrender.com/trend";
 
   return axios
     .get(path)
