@@ -2,6 +2,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/styles/index.css";
+import { inject } from "@vercel/analytics";
+
+inject();
 
 // import 'vuetify/styles'
 // import { createVuetify } from 'vuetify'

@@ -15,7 +15,7 @@
         <div class="mt-1 flex">
           <div class="w-3/4 text-white-dark">
             <div
-              class="cursor-pointer text-wrap font-sairaBody text-xl text-red-light hover:text-white-dark sm:text-[22px]"
+              class="w-fit cursor-pointer text-wrap font-sairaBody text-xl text-red-light hover:text-white-dark sm:text-[22px]"
               @click="goEmit(game_data.Name)"
             >
               {{ game_data.Name }}
