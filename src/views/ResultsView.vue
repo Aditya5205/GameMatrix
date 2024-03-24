@@ -93,7 +93,8 @@ const isLoading = ref(true);
 const gameName = ref("");
 
 const sendGameName = (gameName) => {
-  const path = "https://game-recommendation-flask.onrender.com/results";
+  const path = `${import.meta.env.VITE_PATH_URI_PROD}/results`;
+
   axios
     .post(path, { gameName: gameName })
     .then((res) => {

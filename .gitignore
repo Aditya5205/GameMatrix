@@ -31,3 +31,4 @@ coverage
 
 /ApiCall.vue
 /tempResults.vue
+/.env
