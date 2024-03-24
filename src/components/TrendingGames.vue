@@ -52,7 +52,7 @@ const trending_games_data = ref([]);
 const isApiDone = ref(false);
 
 const receivePayload = async () => {
-  const path = `${import.meta.env.VITE_PATH_URI_PROD}/trend`;
+  const path = "https://game-recommendation-flask.onrender.com/trend";
 
   return axios
     .get(path)
