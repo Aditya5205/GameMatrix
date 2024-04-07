@@ -1,7 +1,9 @@
 <template>
   <body class="min-h-screen bg-black-light">
     <div class="flex h-60 flex-col items-center justify-center">
-      <h2 class="w-full text-center text-4xl text-red-light sm:text-5xl">
+      <h2
+        class="w-full text-center text-4xl uppercase tracking-wide text-red-light sm:text-5xl"
+      >
         Generate Game Recommendations
       </h2>
       <div class="mt-3 flex w-full justify-center sm:mt-4">
@@ -11,8 +13,8 @@
           class="mr-3 w-1/2 rounded-lg outline-none sm:w-1/3"
           :class="
             showSearchbarError
-              ? 'font-sairaHeader bg-red-light text-center text-xl text-white-light sm:text-2xl'
-              : 'font-sairaBody bg-white-dark indent-1 text-lg focus:bg-white-light sm:indent-2 sm:text-xl'
+              ? 'bg-red-light text-center font-sairaHeader text-xl text-white-light sm:text-2xl'
+              : 'bg-white-dark indent-1 font-sairaBody text-lg focus:bg-white-light sm:indent-2 sm:text-xl'
           "
           v-model="gameName"
           placeholder="Enter Game Name Here"
