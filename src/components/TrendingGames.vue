@@ -5,7 +5,9 @@
     >
       Trending Games
     </div>
-    <div class="mx-5 grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-4">
+    <div
+      class="mx-5 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-5 gap-y-7"
+    >
       <div v-for="(game_data, index) in trending_games_data" :key="index">
         <img
           class="rounded-xl"
@@ -52,7 +54,7 @@ const trending_games_data = ref([]);
 const isApiDone = ref(false);
 
 const receivePayload = async () => {
-  const path = "https://game-recommendation-flask.onrender.com/trend";
+  const path = `${import.meta.env.VITE_PATH_URI_PROD}/trend`;
 
   return axios
     .get(path)
