@@ -1,7 +1,7 @@
 <template>
   <div v-if="isApiDone">
     <div
-      class="mx-5 mb-6 text-center text-3xl text-red-light sm:text-left sm:text-4xl"
+      class="mx-5 mb-6 text-center text-3xl text-red-light sm:mt-20 sm:text-left sm:text-4xl"
     >
       Trending Games
     </div>
@@ -31,7 +31,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="w-7 rounded-full bg-white-dark hover:opacity-70 sm:w-9"
+              class="w-8 rounded-full bg-white-dark hover:opacity-70 sm:w-9"
               src="../assets/img/8679449_steam_fill_icon.png"
               alt="steam_logo"
               loading="lazy"

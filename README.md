@@ -1,29 +1,11 @@
-# Game_Recommendation_frontend
+# [Game Matrix](https://gamematrix.vercel.app/)
 
-This template should help get you started developing with Vue 3 in Vite.
+A online platform for everyone to get game recommendations for their favorite games. <br>
+Find out similar games to what you have played and also get to know what similar games others played.
 
-## Recommended IDE Setup
+- Developed with **Vue 3** in Vite with axios.
+- **Tailwind** is used as my CSS framework.
+- Backend is written in **Python** using **Flask** with Psycopg.
+- **PostgreSQL** is used for database.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Genetic algorithm, inspired by natural selection, utilizes artificial neural networks to optimize solutions. They excel in various domains due to their capacity for parallelism and handling complex problems effectively.

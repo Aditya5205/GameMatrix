@@ -6,7 +6,7 @@
       class="mx-2 flex h-full items-center justify-around sm:mx-5 sm:justify-normal"
     >
       <ul
-        class="flex w-full items-center justify-around gap-x-10 text-lg sm:justify-normal sm:text-[22px]"
+        class="flex w-full items-center justify-around gap-x-12 text-xl sm:justify-normal sm:text-2xl"
       >
         <!-- This is where logo goes -->
         <li class="text-center hover:text-white-light sm:mr-3">

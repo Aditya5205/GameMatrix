@@ -1,19 +1,28 @@
 <template>
   <body class="min-h-screen bg-black-light">
-    <div class="flex h-60 flex-col items-center justify-center">
+    <div
+      class="mx-3 flex h-60 flex-col justify-center text-clip sm:mx-5 sm:h-72 sm:justify-end"
+    >
       <h2
-        class="w-full text-center text-4xl uppercase tracking-wide text-red-light sm:text-5xl"
+        class="w-full text-center text-4xl uppercase tracking-wide text-red-light sm:text-left sm:text-7xl"
       >
         Generate Game Recommendations
       </h2>
-      <div class="mt-3 flex w-full justify-center sm:mt-4">
+      <p
+        class="hidden w-full text-center text-3xl text-red-light sm:block sm:text-left"
+      >
+        based on your favourite game from over 20,000 different games.
+      </p>
+      <div
+        class="mt-3 flex w-full justify-center sm:mt-10 sm:h-11 sm:justify-normal"
+      >
         <input
           @keypress.enter="onGenerate"
           type="text"
           class="mr-3 w-1/2 rounded-lg outline-none sm:w-1/3"
           :class="
             showSearchbarError
-              ? 'bg-red-light text-center font-sairaHeader text-xl text-white-light sm:text-2xl'
+              ? 'animate-bounce-new bg-red-light text-center font-sairaHeader text-xl text-white-light sm:text-2xl'
               : 'bg-white-dark indent-1 font-sairaBody text-lg focus:bg-white-light sm:indent-2 sm:text-xl'
           "
           v-model="gameName"
@@ -23,7 +32,7 @@
         />
         <button
           @click="onGenerate"
-          class="rounded-lg bg-white-dark p-1.5 text-lg text-black-light sm:px-4 sm:py-2 sm:text-[22px]"
+          class="rounded-lg bg-white-dark p-1.5 text-lg text-black-light sm:px-4 sm:py-1 sm:text-2xl"
           :disabled="showSearchbarError"
           :class="
             showSearchbarError

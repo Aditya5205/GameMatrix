@@ -19,7 +19,7 @@
     height: 70px;
     display: inline-block;
     position: absolute;
-    top: 45%;
+    top: 60%;
   }
 }
 
