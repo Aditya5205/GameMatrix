@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
-    "axios": "^1.6.2",
+    "axios": "^1.7.4",
+    "lodash.debounce": "^4.0.8",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
     "vuetify": "^3.4.9"

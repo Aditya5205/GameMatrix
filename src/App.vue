@@ -30,7 +30,7 @@
     </nav>
   </header>
 
-  <RouterView />
+  <RouterView class="flex-auto" />
 </template>
 
 <script setup></script>

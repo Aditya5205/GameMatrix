@@ -14,28 +14,48 @@
 
 @layer base {
   html {
+    height: 100%;
     font-family: "sairaHeader", system-ui, sans-serif;
   }
+
+  body {
+    min-height: 100vh;
+  }
+
+  #app {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+  }
   .animate-bounce-new {
-    animation: bounce 0.3s infinite;
+    animation: shake 0.3s infinite;
   }
 }
 
-@keyframes bounce {
+@keyframes shake {
   0% {
-    transform: translateY(-5%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(4px);
   }
   50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
   }
   100% {
-    transform: translateY(5%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateX(0);
   }
 }
 
 .exact-active-link {
   @apply text-white-light;
+}
+
+@media (max-width: 1220px) {
+  .right-split {
+    display: none;
+  }
 }

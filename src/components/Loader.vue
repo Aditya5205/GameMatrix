@@ -1,7 +1,9 @@
 <template>
-  <body class="flex justify-center">
-    <span class="loader"></span>
-  </body>
+  <div class="relative">
+    <div class="flex justify-center">
+      <span class="loader"></span>
+    </div>
+  </div>
 </template>
 
 <style scoped>

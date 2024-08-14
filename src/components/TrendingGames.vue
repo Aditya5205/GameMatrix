@@ -22,7 +22,9 @@
             >
               {{ game_data.Name }}
             </div>
-            <div class="sm:text-md text-lg">{{ game_data.Price }}</div>
+            <div class="sm:text-md font-sairaBody text-lg">
+              {{ game_data.Price }}
+            </div>
           </div>
           <a
             :href="`${game_data.Steam}`"
@@ -42,7 +44,12 @@
     </div>
     <div class="h-10"></div>
   </div>
-  <loadingScreen v-else />
+  <div class="mt-14 flex flex-col text-center" v-else>
+    <loadingScreen />
+    <p class="mt-8 text-xl text-red-light sm:mt-24 sm:text-2xl">
+      Please wait. Server is starting.
+    </p>
+  </div>
 </template>
 
 <script setup>
@@ -54,18 +61,23 @@ const trending_games_data = ref([]);
 const isApiDone = ref(false);
 
 const receivePayload = async () => {
-  const path = `${import.meta.env.VITE_PATH_URI_PROD}/trend`;
+  try {
+    const path = `${import.meta.env.VITE_PATH_URI_PROD}/trend`;
 
-  return axios
-    .get(path)
-    .then((res) => {
-      trending_games_data.value = res.data.payload;
-      isApiDone.value = true;
-    })
-    .catch((err) => {
-      console.log("fetching your data");
-      console.log(`error message is ${err}`);
-    });
+    return axios
+      .get(path)
+      .then((res) => {
+        trending_games_data.value = res.data.payload;
+        isApiDone.value = true;
+      })
+      .catch((err) => {
+        console.log("fetching your data");
+        console.log(`error message is ${err}`);
+      });
+  } catch (err) {
+    console.log("Error! Could not reach the API. " + err);
+    throw new Error(err);
+  }
 };
 
 const emit = defineEmits(["trend_game"]);

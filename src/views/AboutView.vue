@@ -1,6 +1,6 @@
 <template>
-  <body class="min-h-screen bg-black-light">
-    <div class="font-sairaBody px-2 pt-10 text-lg text-red-light sm:text-3xl">
+  <div class="bg-black-light">
+    <div class="px-2 pt-10 font-sairaBody text-lg text-red-light sm:text-3xl">
       <div>
         <div class="text-center">
           <span class="text-white-light">Game Matrix</span>, a game
@@ -14,11 +14,6 @@
         >
           <li class="text-white-light">
             <span class="text-red-light">
-              Add a Log in/Sign Up feature with Oauth.
-            </span>
-          </li>
-          <li class="text-white-light">
-            <span class="text-red-light">
               Add Top games and game library pages.
             </span>
           </li>
@@ -27,16 +22,19 @@
               Improve Backend and Recommendations.
             </span>
           </li>
+          <li class="text-white-light">
+            <span class="text-red-light"> Add a Log in/Sign Up feature. </span>
+          </li>
         </ul>
         <div class="text-center">
-          and whatever else comes to my mind...
+          and a lot...
           <p class="pt-5 text-white-light">Thanks for using this site.</p>
         </div>
       </div>
     </div>
 
     <div
-      class="font-sairaBody flex flex-col items-center justify-center pt-5 text-center text-xl text-red-light"
+      class="flex flex-col items-center justify-center pt-5 text-center font-sairaBody text-xl text-red-light"
     >
       Contact Me:
       <span class="pb-3">adityasingh19122002@gmail.com</span>
@@ -47,5 +45,5 @@
           alt="github_logo"
       /></a>
     </div>
-  </body>
+  </div>
 </template>

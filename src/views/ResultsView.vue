@@ -1,5 +1,5 @@
 <template>
-  <body class="min-h-screen bg-black-light">
+  <div class="bg-black-light">
     <loadingScreen v-if="isLoading" class="pt-40 text-center" />
 
     <div v-else v-cloak>
@@ -68,7 +68,7 @@
 
       <div class="h-10"></div>
     </div>
-  </body>
+  </div>
 </template>
 
 <script setup>
@@ -95,9 +95,8 @@ const gameName = ref("");
 const sendGameName = (gameName) => {
   const path = `${import.meta.env.VITE_PATH_URI_PROD}/results`;
 
-  axios
-    .post(path, { gameName: gameName })
-    .then((res) => {
+  try {
+    axios.post(path, { gameName: gameName }).then((res) => {
       let similar_games_data = res.data.similar_games;
       let also_played_games_data = res.data.also_played_games;
       let chosen_game_data = res.data.chosen_one;
@@ -125,10 +124,11 @@ const sendGameName = (gameName) => {
       }
 
       isLoading.value = false;
-    })
-    .catch((err) => {
-      console.log(err);
     });
+  } catch (err) {
+    console.log("Error! Could not reach the API. " + err);
+    throw new Error(err);
+  }
 };
 
 const setGameName = (gameName) => {
